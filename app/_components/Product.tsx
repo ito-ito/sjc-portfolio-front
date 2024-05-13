@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -35,11 +28,10 @@ const ProductsList = async () => {
                 <div className="absolute top-0 h-full content-center opacity-0 hover:opacity-100 hover:bg-white/80">
                   <CardHeader>
                     <CardTitle>{product.name}</CardTitle>
-                    <CardDescription>Card Description</CardDescription>
+                    <CardDescription className="hidden md:inline-block">
+                      {product.description}
+                    </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <p>{product.description}</p>
-                  </CardContent>
                   <CardFooter>{product.url && <p>Card Footer</p>}</CardFooter>
                 </div>
               </Card>
