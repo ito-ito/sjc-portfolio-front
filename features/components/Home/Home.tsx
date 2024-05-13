@@ -1,4 +1,4 @@
-const Title = () => {
+const Home = () => {
   return (
     <div className="relative pt-20">
       <h1 className="text-slate-900 font-extrabold text-6xl text-center">portfolio</h1>
@@ -9,4 +9,4 @@ const Title = () => {
   );
 };
 
-export default Title;
+export default Home;
