@@ -1,7 +1,7 @@
 import Home from "./Home/Home";
-import Product from "./Product/Product";
+import ProductList from "./Product/ProductList";
 import Profile from "./Profile/Profile";
-import Skill from "./Skill/Skill";
-import Work from "./Work/Work";
+import SkillList from "./Skill/SkillList";
+import ProjectList from "./Project/ProjectList";
 
-export { Home, Product, Profile, Skill, Work };
+export { Home, ProductList, Profile, SkillList, ProjectList };

@@ -7,18 +7,17 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import { Product } from "@/app/utils/product/types";
 
-const fetchProducts = async () => {
-  const response = await fetch("http://back:3000/products", {
-    cache: "no-store",
-  });
-  return response.json();
-};
+interface Props {
+  products: Product[];
+}
 
-const ProductsList = async () => {
-  const products = await fetchProducts();
+const ProductList = (props: Props) => {
+  const { products } = props;
   return (
-    <>
+    <div className="relative pt-8">
+      <h2 className="text-slate-900 font-bold text-2xl">Products</h2>
       <Carousel className="mx-10 mt-10">
         <CarouselContent>
           {products.map((product) => (
@@ -41,17 +40,8 @@ const ProductsList = async () => {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-    </>
-  );
-};
-
-const Product = () => {
-  return (
-    <div className="relative pt-8">
-      <h2 className="text-slate-900 font-bold text-2xl">Products</h2>
-      <ProductsList />
     </div>
   );
 };
 
-export default Product;
+export default ProductList;
