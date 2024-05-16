@@ -8,14 +8,16 @@ interface Props {
 const SkillList = (props: Props) => {
   const { skills } = props;
   return (
-    <div className="relative pt-8">
-      <h2 className="text-slate-900 font-bold text-2xl">Skills</h2>
-      {skills.map((skill) => (
-        <>
-          <p key={skill.id}>{skill.name}</p>
-          <Progress value={skill.level} />
-        </>
-      ))}
+    <div className="h-screen content-center">
+      <h2 className="text-semibold text-slate-300 text-center">Skills</h2>
+      <div className="">
+        {skills.map((skill) => (
+          <div key={skill.id} className="w-2/3 mx-auto">
+            <p className="mt-2">{skill.name}</p>
+            <Progress value={skill.level} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
