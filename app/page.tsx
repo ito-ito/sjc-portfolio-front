@@ -9,7 +9,7 @@ const Page = async () => {
   const projects = await getProjects({ limit: 9 });
 
   return (
-    <div className="m-8 sm:m-20">
+    <div className="container">
       <Top.Home />
       <Top.Profile />
       <Top.ProjectList projects={projects} />
