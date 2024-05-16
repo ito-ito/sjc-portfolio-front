@@ -24,13 +24,13 @@ const ProjectList = (props: Props) => {
   const { projects } = props;
 
   return (
-    <div className="relative pt-8">
-      <h2 className="text-slate-900 font-bold text-2xl">Careers</h2>
+    <div className="h-screen content-center">
+      <h2 className="font-semibold text-slate-400">Careers</h2>
       <Carousel className="mx-10 mt-10">
         <CarouselContent>
           {projects.map((project) => (
             <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/3">
-              <Card>
+              <Card className="h-full">
                 <CardHeader>
                   <CardTitle>{project.title}</CardTitle>
                   <CardDescription>description</CardDescription>
@@ -44,13 +44,15 @@ const ProjectList = (props: Props) => {
               </Card>
             </CarouselItem>
           ))}
+          <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+            <Card className="h-full content-center text-center">
+              <Button variant="link">Show more...</Button>
+            </Card>
+          </CarouselItem>
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      <Button variant="link" className="float-right pt-1">
-        Show more...
-      </Button>
     </div>
   );
 };

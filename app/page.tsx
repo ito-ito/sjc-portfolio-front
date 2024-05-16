@@ -6,7 +6,7 @@ import { getProjects } from "./utils/project/api";
 const Page = async () => {
   const skills = await getSkills();
   const products = await getProducts();
-  const projects = await getProjects({ limit: 9 });
+  const projects = await getProjects({ limit: 5 });
 
   return (
     <div className="container">
