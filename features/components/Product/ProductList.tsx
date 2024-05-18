@@ -1,4 +1,6 @@
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Product } from "@/app/utils/product/types";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -7,7 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-import { Product } from "@/app/utils/product/types";
+import Link from "next/link";
 
 interface Props {
   products: Product[];
@@ -16,29 +18,43 @@ interface Props {
 const ProductList = (props: Props) => {
   const { products } = props;
   return (
-    <div className="relative pt-8">
-      <h2 className="text-slate-900 font-bold text-2xl">Products</h2>
-      <Carousel className="mx-10 mt-10">
+    <div className="h-screen content-center">
+      <h2 className="text-semibold text-slate-300 text-center">Products</h2>
+      <Carousel>
         <CarouselContent>
           {products.map((product) => (
-            <CarouselItem key={product.id} className="lg:basis-1/2">
-              <Card className="overflow-hidden relative">
-                <Image className="w-full" src={product.image_url} alt="" width={500} height={500} />
-                <div className="absolute top-0 h-full content-center opacity-0 hover:opacity-100 hover:bg-white/80">
-                  <CardHeader>
-                    <CardTitle>{product.name}</CardTitle>
-                    <CardDescription className="hidden md:inline-block">
+            <CarouselItem key={product.id} className="">
+              <Card className="overflow-hidden">
+                <Image
+                  className="aspect-[23/10] w-full h-auto object-cover"
+                  src={product.image_url}
+                  alt=""
+                  width={500}
+                  height={500}
+                />
+                <div className="absolute top-0 h-full w-full content-center text-center bg-white/30">
+                  <div className="w-4/5 mx-auto flex flex-col items-center">
+                    <CardHeader>
+                      <CardTitle>{product.name}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="hidden md:inline-block">
                       {product.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardFooter>{product.url && <p>Card Footer</p>}</CardFooter>
+                    </CardContent>
+                    <CardFooter>
+                      <Button variant="secondary" className="opacity-80">
+                        <Link href={product.url ? product.url : "#"} target="_blank">
+                          詳細を見る
+                        </Link>
+                      </Button>
+                    </CardFooter>
+                  </div>
                 </div>
               </Card>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="ml-16" />
+        <CarouselNext className="mr-16" />
       </Carousel>
     </div>
   );
