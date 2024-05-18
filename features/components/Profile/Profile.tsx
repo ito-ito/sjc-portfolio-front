@@ -2,7 +2,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Profile = () => {
   return (
-    <div className="pb-16 h-1/2 sm:h-screen content-center">
+    <div className="pb-16 h-1/2 sm:h-screen content-center" id="about_me">
       <h2 className="text-2xl sm:text-3xl font-semibold text-slate-400 text-center pb-8">
         About me
       </h2>

@@ -1,3 +1,4 @@
+import Header from "@/components/layouts/header/Header";
 import * as Top from "@/features/components/Index";
 import { getSkills } from "./utils/skill/api";
 import { getProducts } from "./utils/product/api";
@@ -9,13 +10,16 @@ const Page = async () => {
   const projects = await getProjects({ limit: 5 });
 
   return (
-    <div className="container">
-      <Top.Home />
-      <Top.Profile />
-      <Top.ProjectList projects={projects} />
-      <Top.SkillList skills={skills} />
-      <Top.ProductList products={products} />
-    </div>
+    <>
+      <Header />
+      <div className="container">
+        <Top.Home />
+        <Top.Profile />
+        <Top.ProjectList projects={projects} />
+        <Top.SkillList skills={skills} />
+        <Top.ProductList products={products} />
+      </div>
+    </>
   );
 };
 

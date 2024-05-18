@@ -8,7 +8,7 @@ interface Props {
 const SkillList = (props: Props) => {
   const { skills } = props;
   return (
-    <div className="pb-16 h-1/2 sm:h-screen content-center">
+    <div className="pb-16 h-1/2 sm:h-screen content-center" id="skills">
       <h2 className="text-2xl sm:text-3xl text-semibold text-slate-300 text-center pb-8">Skills</h2>
       <div className="">
         {skills.map((skill) => (
