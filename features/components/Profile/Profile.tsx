@@ -2,8 +2,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Profile = () => {
   return (
-    <div className="h-screen content-center">
-      <h2 className="font-semibold text-slate-400">About me</h2>
+    <div className="pb-16 h-1/2 sm:h-screen content-center">
+      <h2 className="text-2xl sm:text-3xl font-semibold text-slate-400 text-center pb-8">
+        About me
+      </h2>
       <Avatar className="h-32 w-32">
         <AvatarImage
           src="https://kotonohaworks.com/free-icons/wp-content/uploads/kkrn_icon_user_12.png"

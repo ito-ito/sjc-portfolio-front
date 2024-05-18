@@ -18,15 +18,17 @@ interface Props {
 const ProductList = (props: Props) => {
   const { products } = props;
   return (
-    <div className="h-screen content-center">
-      <h2 className="text-semibold text-slate-300 text-center">Products</h2>
+    <div className="pb-16 h-1/2 sm:h-screaen content-center">
+      <h2 className="text-2xl sm:text-3xl text-semibold text-slate-300 text-center pb-8">
+        Products
+      </h2>
       <Carousel>
         <CarouselContent>
           {products.map((product) => (
             <CarouselItem key={product.id} className="">
               <Card className="overflow-hidden">
                 <Image
-                  className="aspect-[23/10] w-full h-auto object-cover"
+                  className="aspect-[3/2] md:aspect-[23/10] w-full h-auto object-cover"
                   src={product.image_url}
                   alt=""
                   width={500}
