@@ -24,7 +24,7 @@ const ProjectList = (props: Props) => {
   const { projects } = props;
 
   return (
-    <div className="pb-16 h-1/2 sm:h-screen content-center" id="careers">
+    <div className="snap-start pb-16 h-screen content-center" id="careers">
       <h2 className="text-2xl sm:text-3xl font-semibold text-slate-400 text-center pb-8">
         Careers
       </h2>

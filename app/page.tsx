@@ -12,7 +12,7 @@ const Page = async () => {
   return (
     <>
       <Header />
-      <div className="container">
+      <div className="container snap-mandatory snap-y overflow-y-scroll h-screen">
         <Top.Home />
         <Top.Profile />
         <Top.ProjectList projects={projects} />
